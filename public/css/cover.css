@@ -427,6 +427,6 @@ a.btn.btn-login-method > i.oauth-icon > img {
     line-height: inherit;
 }
 
-#history .form-inline {
+.form-inline {
   margin-top: 20px;
 }
