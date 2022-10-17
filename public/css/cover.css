@@ -261,6 +261,7 @@ input {
     line-height: 15px;
 }
 .form-inline {
+    margin-top: 20px;
     padding: 0 10px;
 }
 .sort.asc {
@@ -425,8 +426,4 @@ a.btn.btn-login-method > i.oauth-icon > img {
     width: 100%;
     height: 100%;
     line-height: inherit;
-}
-
-.form-inline {
-  margin-top: 20px;
 }
