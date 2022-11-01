@@ -1,6 +1,4 @@
-ARG RUNTIME
-
-FROM hackmdio/buildpack:node-10-0baafb79 as BUILD
+FROM hackmdio/buildpack:node-10-95fb3df8 as BUILD
 
 COPY --chown=hackmd:hackmd . .
 
@@ -16,7 +14,7 @@ RUN set -xe && \
         package-lock.json webpack.prod.js webpack.htmlexport.js webpack.dev.js webpack.common.js \
         config.json.example README.md CONTRIBUTING.md AUTHORS node_modules
 
-FROM $RUNTIME
+FROM hackmdio/runtime:node-10-cjk-95fb3df8
 USER hackmd
 WORKDIR /home/hackmd/app
 COPY --chown=1500:1500 --from=BUILD /home/hackmd/app .
