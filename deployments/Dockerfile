@@ -21,6 +21,7 @@ COPY --chown=1500:1500 --from=BUILD /home/hackmd/app .
 
 RUN npm install --production && npm cache clean --force && rm -rf /tmp/{core-js-banners,phantomjs}
 
+USER root
 COPY --from=us-docker.pkg.dev/berglas/berglas/berglas:0.6.2 /bin/berglas /bin/berglas
 RUN chmod +x /bin/berglas
 
