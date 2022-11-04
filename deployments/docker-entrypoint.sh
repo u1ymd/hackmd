@@ -8,14 +8,14 @@ if [[ "$#" -gt 0 ]]; then
 fi
 
 # check database and redis is ready
-pcheck -env CMD_DB_URL
+/bin/berglas exec -- pcheck -env CMD_DB_URL
 
 # run DB migrate
 NEED_MIGRATE=${CMD_AUTO_MIGRATE:=true}
 
 if [[ "$NEED_MIGRATE" = "true" ]] && [[ -f .sequelizerc ]] ; then
-    npx sequelize db:migrate
+    /bin/berglas exec -- npx sequelize db:migrate
 fi
 
 # start application
-node app.js
+/bin/berglas exec -- node app.js
