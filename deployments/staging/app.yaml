@@ -8,8 +8,8 @@ network:
   instance_tag: codimd-staging-app
 
 resources:
-  cpu: 4
-  memory_gb: 15.6
+  cpu: 2
+  memory_gb: 7.6
   disk_size_gb: 10
 
 manual_scaling:
