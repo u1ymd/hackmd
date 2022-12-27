@@ -43,3 +43,4 @@ env_variables:
   CMD_USECDN: sm://smarthr-corporate/codimd_staging_cmd_usecdn
   NODE_ENV: sm://smarthr-corporate/codimd_staging_node_env
   PGSSLMODE: sm://smarthr-corporate/codimd_staging_pgsslmode
+  CMD_LOGLEVEL: sm://smarthr-corporate/codimd_staging_cmd_loglevel
