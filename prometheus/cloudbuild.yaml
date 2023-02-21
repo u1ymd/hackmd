@@ -1,0 +1,40 @@
+steps:
+- id: build
+  name: gcr.io/cloud-builders/docker
+  args: [
+  'build',
+  '-f',
+  'prometheus/Dockerfile',
+  '-t',
+  'asia-northeast1-docker.pkg.dev/$PROJECT_ID/codimd-prometheus/codimd-prometheus:latest',
+  '.'
+  ]
+  timeout: 900s
+- id: push
+  name: gcr.io/cloud-builders/docker
+  args: [
+  'push',
+  'asia-northeast1-docker.pkg.dev/$PROJECT_ID/codimd-prometheus/codimd-prometheus:latest'
+  ]
+  timeout: 900s
+  waitFor:
+    - build
+- id: deploy
+  name: gcr.io/cloud-builders/gcloud
+  args: [
+  'run',
+  'deploy',
+  'codimd-prometheus',
+  '--image',
+  'asia-northeast1-docker.pkg.dev/$PROJECT_ID/codimd-prometheus/codimd-prometheus:latest',
+  '--region',
+  'asia-northeast1'
+  ]
+  timeout: 900s
+  waitFor:
+    - push
+options:
+  pool:
+    name: projects/$PROJECT_ID/locations/asia-northeast1/workerPools/private-pool
+  logging: CLOUD_LOGGING_ONLY
+timeout: 1200s

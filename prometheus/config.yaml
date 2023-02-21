@@ -1,0 +1,26 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    project_id: smarthr-corporate
+    location: asia-northeast1
+    namespace: codimd
+scrape_configs:
+  - job_name: codimd-router
+    honor_timestamps: true
+    scrape_interval: 5s
+    scrape_timeout: 5s
+    metrics_path: /metrics/router
+    scheme: https
+    static_configs:
+      - targets:
+          - codimd.kufu.tools
+  - job_name: codimd
+    honor_timestamps: true
+    scrape_interval: 5s
+    scrape_timeout: 5s
+    metrics_path: /metrics/codimd
+    scheme: https
+    static_configs:
+      - targets:
+          - codimd.kufu.tools
