@@ -1,0 +1,45 @@
+runtime: custom
+env: flex
+service: codimd-production
+
+network:
+  name: smarthr-corporate
+  subnetwork_name: smarthr-corporate
+  instance_tag: codimd-production-app
+
+resources:
+  cpu: 2
+  memory_gb: 7.6
+  disk_size_gb: 10
+
+manual_scaling:
+  instances: 1
+
+env_variables:
+  CMD_ALLOW_ANONYMOUS: sm://smarthr-corporate/codimd_production_cmd_allow_anonymous
+  CMD_ALLOW_EMAIL_REGISTER: sm://smarthr-corporate/codimd_production_cmd_allow_email_register
+  CMD_CSP_ENABLE: sm://smarthr-corporate/codimd_production_cmd_csp_enable
+  CMD_DB_URL: sm://smarthr-corporate/codimd_production_cmd_db_url
+  CMD_DEFAULT_PERMISSION: sm://smarthr-corporate/codimd_production_cmd_default_permission
+  CMD_DOMAIN: sm://smarthr-corporate/codimd_production_cmd_domain
+  CMD_EMAIL: sm://smarthr-corporate/codimd_production_cmd_email
+  CMD_HSTS_ENABLE: sm://smarthr-corporate/codimd_production_cmd_hsts_enable
+  CMD_HSTS_INCLUDE_SUBDOMAINS: sm://smarthr-corporate/codimd_production_cmd_hsts_include_subdomains
+  CMD_HSTS_MAX_AGE: sm://smarthr-corporate/codimd_production_cmd_hsts_max_age
+  CMD_HSTS_PRELOAD: sm://smarthr-corporate/codimd_production_cmd_hsts_preload
+  CMD_IMAGE_UPLOAD_TYPE: sm://smarthr-corporate/codimd_production_cmd_image_upload_type
+  CMD_PORT: sm://smarthr-corporate/codimd_production_cmd_port
+  CMD_PROTOCOL_USESSL: sm://smarthr-corporate/codimd_production_cmd_protocol_usessl
+  CMD_S3_ACCESS_KEY_ID: sm://smarthr-corporate/codimd_production_cmd_s3_access_key_id
+  CMD_S3_BUCKET: sm://smarthr-corporate/codimd_production_cmd_s3_bucket
+  CMD_S3_REGION: sm://smarthr-corporate/codimd_production_cmd_s3_region
+  CMD_S3_SECRET_ACCESS_KEY: sm://smarthr-corporate/codimd_production_cmd_s3_secret_access_key
+  CMD_SAML_IDENTIFIERFORMAT: sm://smarthr-corporate/codimd_production_cmd_saml_identifierformat
+  CMD_SAML_IDPCERT: sm://smarthr-corporate/codimd_production_cmd_saml_idpcert
+  CMD_SAML_IDPSSOURL: sm://smarthr-corporate/codimd_production_cmd_saml_idpssourl
+  CMD_SAML_ISSUER: sm://smarthr-corporate/codimd_production_cmd_saml_issuer
+  CMD_SESSION_LIFE: sm://smarthr-corporate/codimd_production_cmd_session_life
+  CMD_SESSION_SECRET: sm://smarthr-corporate/codimd_production_cmd_session_secret
+  CMD_USECDN: sm://smarthr-corporate/codimd_production_cmd_usecdn
+  NODE_ENV: sm://smarthr-corporate/codimd_production_node_env
+  PGSSLMODE: sm://smarthr-corporate/codimd_production_pgsslmode
