@@ -24,3 +24,12 @@ scrape_configs:
     static_configs:
       - targets:
           - codimd.kufu.tools
+  - job_name: shirabe-router
+    honor_timestamps: true
+    scrape_interval: 5s
+    scrape_timeout: 5s
+    metrics_path: /metrics/router
+    scheme: https
+    static_configs:
+      - targets:
+          - shirabe.kufu.tools
