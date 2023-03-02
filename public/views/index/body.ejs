@@ -32,6 +32,9 @@
                                     </ul>
                                 </span>
                             </div>
+                            <form name="exportNoteData" action="<%- serverURL %>/me/export" method="post">
+                                <input type="hidden" name="_csrf" value="<%- csrfToken %>">
+                            </form>
                         </ul>
                     </nav>
                 </div>
@@ -200,4 +203,4 @@
         </div>
     </div>
 </div>
-<%- include ../shared/signin-modal %>
+<%- include('../shared/signin-modal') %>
