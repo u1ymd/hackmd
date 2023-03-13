@@ -18,4 +18,4 @@ if [[ "$NEED_MIGRATE" = "true" ]] && [[ -f .sequelizerc ]] ; then
 fi
 
 # start application
-/bin/berglas exec -- node app.js
+/bin/berglas exec -- node app.js --max-old-space-size=2000
