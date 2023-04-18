@@ -43,3 +43,4 @@ env_variables:
   CMD_USECDN: sm://smarthr-corporate/codimd_production_cmd_usecdn
   NODE_ENV: sm://smarthr-corporate/codimd_production_node_env
   PGSSLMODE: sm://smarthr-corporate/codimd_production_pgsslmode
+  NODE_OPTIONS: --max-old-space-size=2000
